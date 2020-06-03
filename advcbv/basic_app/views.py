@@ -8,14 +8,14 @@ class IndexView(TemplateView):
 
     def get_context_data(self,**kwargs):
         context  = super().get_context_data(**kwargs)
-        context['injectme'] = 10+20      #"Basic Injection!"
+        context['injectme'] = 'Github repo'     #"Basic Injection!"
         return context
 
 
 
 class SchoolListView(ListView):
     model = models.School # default school_list
-
+    template_name = 'basic_app/school_list.html' #added templat_name for better redability
 
 class SchoolDetailView(DetailView):
     context_object_name = 'school_details' # default is lower case School
